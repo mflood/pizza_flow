@@ -181,9 +181,10 @@ b.link("Mike", "Vegetarian", 3)
 b.link("Mike", "Mushroom", 3)
 b.link("Mike", "Cheese", 1)
 
-b.link("Craig", "Vegetarian", 2)
-b.link("Craig", "Mushroom", 2)
+b.link("Craig", "Vegetarian", 3)
 b.link("Tinkler", "Mushroom", 3)
+b.link("Tinkler", "Vegetarian", 3)
+b.link("Tinkler", "Cheese", 3)
 
 b.link("Oz", "Pepperoni", 4)
 b.link("Oz", "Meat Lovers", 4)
