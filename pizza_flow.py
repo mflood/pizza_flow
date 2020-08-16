@@ -91,19 +91,19 @@ class Bipartite(object):
             pass
         
 
-        print "--- people and what they should eat ---"
+        print("--- people and what they should eat ---")
         for node in self._left_nodes:
             for e in node.outgoing_edges:
                 if e.usage:
-                    print e
+                    print(e)
 
 
-        print "--- number of slices from each pizza that will be consumed ---"
+        print("--- number of slices from each pizza that will be consumed ---")
         for node in self._right_nodes:
             total = 0    
             for e in node.outgoing_edges:
                 total += e.usage
-            print "%s: %s" % (node.name, total)
+            print( "%s: %s" % (node.name, total))
 
 
     def find_path(self):
@@ -149,16 +149,15 @@ b = Bipartite()
 
 # add people who are eating and the maximum number of slices they
 # anticipate eating
-b.add_left_node("Flood", 3)
+b.add_left_node("Flood", 4)
 b.add_left_node("Craig", 3)
 b.add_left_node("Tavis", 4)
 b.add_left_node("Oz", 4)
-b.add_left_node("Marc", 3)
 b.add_left_node("Mike", 3)
 b.add_left_node("Tinkler", 3)
 
 # second argument is number of slices each
-# pizza provides.  St to 0 to turn off a pizza
+# pizza provides.  Set to 0 to turn off a pizza
 # if you buy more than one pizza of the same type, 
 # just double the number of slices
 
@@ -167,25 +166,34 @@ b.add_right_node("Pepperoni", 8)
 b.add_right_node("Vegetarian", 8)
 b.add_right_node("Meat Lovers", 0)
 b.add_right_node("Mushroom", 8)
+b.add_right_node("Cheese", 8)
 
 
 # Link people to pizzas by specifiying
 # the number of slices they would be willing to eat of that
 # particular pizza if they had to.
-b.link("Flood", "Pepperoni", 1)
-b.link("Flood", "Sausage", 1)
-b.link("Flood", "Meat Lovers", 1)
-b.link("Flood", "Vegetarian", 1)
+b.link("Flood", "Pepperoni", 4)
+b.link("Flood", "Sausage", 4)
+b.link("Flood", "Meat Lovers", 4)
+b.link("Flood", "Vegetarian", 2)
 
-b.link("Craig", "Vegetarian", 3)
-b.link("Craig", "Mushroom", 3)
+b.link("Mike", "Vegetarian", 3)
+b.link("Mike", "Mushroom", 3)
+b.link("Mike", "Cheese", 1)
+
+b.link("Craig", "Vegetarian", 2)
+b.link("Craig", "Mushroom", 2)
 b.link("Tinkler", "Mushroom", 3)
 
 b.link("Oz", "Pepperoni", 4)
 b.link("Oz", "Meat Lovers", 4)
 
+b.link("Tavis", "Pepperoni", 4)
+b.link("Tavis", "Meat Lovers", 4)
+b.link("Tavis", "Sausage", 4)
+
 b.solve()
 
 # if you want to see the graph in its final state, print it:
 # print
-# print b
+# print(b)
