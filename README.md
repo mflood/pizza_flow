@@ -40,16 +40,17 @@ b.add_right_node("Cheese", 8)
 be willing to eat if they had to.  
 
 ```
-
 b.link("Flood", "Meat Lovers", 4)
+b.link("Flood", "Pepperoni", 4)
 b.link("Flood", "Vegetarian", 2)
 
+# Pretend-Tavis is a vegetarian
 b.link("Tavis", "Vegetarian", 3)
 b.link("Tavis", "Mushroom", 3)
 b.link("Tavis", "Cheese", 1)
 
+# Craig is a strict vegetarian and only eats things with the word "vegetarian" in them
 b.link("Craig", "Vegetarian", 3)
-
 
 ```
 
